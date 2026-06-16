@@ -22,6 +22,6 @@ if ( ! class_exists( 'YahnisElsts\PluginUpdateChecker\v5\PucFactory' ) ) {
  */
 $theme_updater = PucFactory::buildUpdateChecker(
 	'https://github.com/Almujab-Sidik/eraai-theme/',
-	get_template_directory() . '/style.css', // Path to the main stylesheet/theme folder.
+	get_template_directory(), // Path to the theme directory.
 	'eraai' // Theme folder directory name (slug).
 );
