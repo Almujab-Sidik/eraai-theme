@@ -1,0 +1,106 @@
+/* Base */
+body {
+    font-family: var(--font-base);
+    font-size: var(--body-lg);
+    font-weight: var(--font-regular);
+    color: var(--ink);
+    background-color: var(--surface);
+    line-height: var(--leading-normal);
+    letter-spacing: -0.015em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-base);
+    font-weight: var(--font-semibold);
+    line-height: var(--leading-tight);
+    color: var(--ink-2);
+    letter-spacing: -0.03em;
+}
+
+h1 {
+    font-size: var(--h1);
+}
+
+h2 {
+    font-size: var(--h2);
+}
+
+h3 {
+    font-size: var(--h3);
+}
+
+h4 {
+    font-size: var(--h4);
+}
+
+h5 {
+    font-size: var(--h5);
+}
+
+h6 {
+    font-size: var(--h6);
+}
+
+/* Size utilities */
+.text-xl {
+    font-size: var(--body-xl);
+}
+
+.text-lg {
+    font-size: var(--body-lg);
+}
+
+.text-md {
+    font-size: var(--body-md);
+}
+
+.text-sm {
+    font-size: var(--body-sm);
+}
+
+/* Weight utilities */
+.font-regular {
+    font-weight: var(--font-regular);
+}
+
+.font-medium {
+    font-weight: var(--font-medium);
+}
+
+.font-semibold {
+    font-weight: var(--font-semibold);
+}
+
+/* Color utilities — monochrome */
+.text-primary {
+    color: var(--ink-2);
+}
+
+.text-secondary {
+    color: var(--ink);
+}
+
+.text-muted {
+    color: var(--muted);
+}
+
+.text-inverse {
+    color: var(--surface);
+}
+
+/* Label / badge style */
+.text-label {
+    font-size: var(--body-sm);
+    font-weight: var(--font-medium);
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--muted-2);
+}

@@ -1,0 +1,138 @@
+:root {
+
+    /* Colors - Neutral (Light Backgrounds) */
+    --paper: #F9FAFB;
+    --surface: #FFFFFF;
+    --surface-2: #F3F4F6;
+    --ink: #111827;
+    --ink-2: #09090B;
+    --muted: #4B5563;
+    --muted-2: #6B7280;
+    --line: #E5E7EB;
+    --line-2: #F3F4F6;
+
+    /* Colors - Accent (Dark Neutral / Monochrome Accents) */
+    --accent: #09090B;
+    --accent-strong: #000000;
+    --accent-soft: #F3F4F6;
+    --accent-glow: rgba(9, 9, 11, 0.05);
+
+    /* Layout Components Custom Colors */
+    --navbar-bg: rgba(255, 255, 255, 0.8);
+    --badge-bg: rgba(243, 244, 246, 0.9);
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.02);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.03), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.03), 0 4px 6px -2px rgba(0, 0, 0, 0.01);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.04), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+
+    /* Typography - Families */
+    --font-base: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Monaco, Consolas, monospace;
+    --font-display: var(--font-base);
+
+    /* Typography - Scale */
+    --t-display: 48px;
+    --t-h1: 32px;
+    --t-h2: 24px;
+    --t-h3: 20px;
+    --t-h4: 18px;
+    --t-h5: 16px;
+    --t-h6: 14px;
+    --t-lead: 16px;
+    --t-body: 14px;
+    --t-sm: 12px;
+    --t-cap: 11px;
+    --t-label: 12px;
+
+    /* Typography - Aliases */
+    --h1: var(--t-h1);
+    --h2: var(--t-h2);
+    --h3: var(--t-h3);
+    --h4: var(--t-h4);
+    --h5: var(--t-h5);
+    --h6: var(--t-h6);
+
+    --body-xl: var(--t-lead);
+    --body-lg: var(--t-body);
+    --body-md: var(--t-sm);
+    --body-sm: var(--t-cap);
+
+    /* Typography - Weights */
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+
+    /* Typography - Line Heights */
+    --leading-tight: 1.25;
+    --leading-normal: 1.55;
+    --leading-loose: 1.7;
+
+    /* Spacing */
+    --sp-1: 6px;
+    --sp-2: 10px;
+    --sp-3: 14px;
+    --sp-4: 18px;
+    --sp-5: 24px;
+    --sp-6: 36px;
+    --sp-7: 48px;
+    --sp-8: 64px;
+    --sp-9: 80px;
+    --sp-10: 96px;
+
+    /* Spacing - Aliases */
+    --space-1: var(--sp-1);
+    --space-2: var(--sp-2);
+    --space-3: var(--sp-3);
+    --space-4: var(--sp-4);
+    --space-6: var(--sp-5);
+    --space-8: var(--sp-6);
+    --space-10: var(--sp-7);
+    --space-12: var(--sp-7);
+
+    /* Borders */
+    --bd-hair: 1px solid var(--line);
+    --bd-strong: 1px solid var(--line-2);
+    --bd-rule: 1px solid var(--line);
+
+    /* Border Radius */
+    --radius: 14px;
+    --radius-sm: 6px;
+    --radius-md: 14px;
+    --radius-lg: 20px;
+    --radius-xl: 28px;
+
+    /* Layout */
+    --maxw: 1200px;
+    --container-width: var(--maxw);
+    --gutter: 24px;
+    --container-padding: 0 var(--gutter);
+    --section-padding: var(--sp-6) 0;
+
+    /* Motion */
+    --ease: cubic-bezier(.22, .61, .36, 1);
+    --dur: .15s;
+
+    /* Legacy Aliases */
+    --grey-0: var(--surface);
+    --grey-25: var(--paper);
+    --grey-50: var(--surface-2);
+    --grey-100: var(--line);
+    --grey-200: var(--line-2);
+    --grey-300: var(--muted-2);
+    --grey-400: var(--muted);
+    --grey-500: var(--ink-2);
+    --grey-600: #27272A;
+    --grey-700: var(--ink-2);
+    --grey-800: #18181B;
+    --grey-900: var(--ink);
+
+    --primary-0: var(--paper);
+    --primary-25: var(--surface-2);
+    --primary-50: var(--line);
+    --primary-100: var(--muted-2);
+    --primary-200: var(--ink-2);
+    --primary-300: var(--ink);
+
+}

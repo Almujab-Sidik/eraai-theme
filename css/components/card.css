@@ -1,0 +1,242 @@
+/* ============================================
+   GRID CARDS LAYOUT
+   ============================================ */
+
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+@media (max-width: 1024px) {
+    .grid-cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 640px) {
+    .grid-cards {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+/* ============================================
+   CARD CONTAINER
+   ============================================ */
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background: var(--paper);
+    border: 1px solid var(--line-2);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: 
+        border-color var(--dur) var(--ease), 
+        box-shadow var(--dur) var(--ease);
+}
+
+.card:hover {
+    border-color: var(--line);
+    box-shadow: var(--shadow-md);
+}
+
+/* Cover Image */
+.card .cover {
+    position: relative;
+    aspect-ratio: 16/10;
+    overflow: hidden;
+    margin: 12px 12px 0 12px;
+    border-radius: 10px;
+}
+
+.card .cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform var(--dur) var(--ease);
+}
+
+.card:hover .cover img {
+    transform: scale(1.02);
+}
+
+.card .cover .ctag {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: .02em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+    background: var(--badge-bg);
+    backdrop-filter: blur(4px);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 4px 8px;
+    z-index: 10;
+    transition: background-color var(--dur) var(--ease);
+}
+
+.card:hover .cover .ctag {
+    background: var(--surface);
+}
+
+.card .cover .ctime {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--muted);
+    background: var(--badge-bg);
+    backdrop-filter: blur(4px);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 4px 8px;
+}
+
+.card .cover::after {
+    display: none;
+}
+
+/* Card Body */
+.card .body {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px var(--sp-5) var(--sp-5);
+    flex: 1;
+}
+
+.card .ttl {
+    font-family: var(--font-base);
+    font-weight: var(--font-semibold);
+    font-size: 16px;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin: 0;
+    transition: color var(--dur) var(--ease);
+}
+
+.card .ttl a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.card .ttl a:hover {
+    color: var(--muted);
+}
+
+.card p {
+    margin: 0;
+}
+
+.card .dek {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.5;
+    flex: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Card Meta */
+.card .byl {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--sp-3);
+    padding-top: 12px;
+    margin-top: 8px;
+    border-top: 1px solid var(--line);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: .05em;
+    color: var(--muted-2);
+    text-transform: uppercase;
+}
+
+.card .byl b {
+    color: var(--muted);
+    font-weight: 500;
+}
+
+/* ============================================
+   FEATURED CARD
+   ============================================ */
+
+.card-feature {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    gap: 0;
+}
+
+.card-feature .cover {
+    margin: 16px 0 16px 16px;
+    aspect-ratio: auto;
+    min-height: 320px;
+}
+
+.card-feature .body {
+    padding: 24px var(--sp-6) var(--sp-6) 24px;
+    justify-content: center;
+    gap: 16px;
+}
+
+.card-feature .ttl {
+    font-size: 24px;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+}
+
+.card-feature .dek {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--muted);
+    flex: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media(max-width: 860px) {
+    .card-feature {
+        grid-template-columns: 1fr;
+    }
+
+    .card-feature .cover {
+        margin: 12px 12px 0 12px;
+        min-height: 200px;
+        aspect-ratio: 16/10;
+    }
+
+    .card-feature .body {
+        padding: 16px var(--sp-5) var(--sp-5);
+        gap: 12px;
+    }
+
+    .card-feature .ttl {
+        font-size: 18px;
+    }
+
+    .card-feature .dek {
+        font-size: 13px;
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+    }
+}

@@ -1,0 +1,394 @@
+/* ============================================
+   ERA AI - CUSTOM WORDPRESS LOGIN SCREEN
+   ============================================ */
+
+body.login {
+	display: flex;
+	min-height: 100vh;
+	align-items: center;
+	justify-content: center;
+	margin: 0;
+	padding: var(--sp-3);
+	background-color: var(--paper);
+	font-family: var(--font-base);
+	position: relative;
+	box-sizing: border-box;
+}
+
+/* Add a modern overlay to dim the background image nicely */
+body.login::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: radial-gradient(circle at center, transparent 30%, rgba(250, 250, 250, 0.4) 100%);
+	z-index: 1;
+	pointer-events: none;
+}
+
+/* ── LOGIN BOX CONTAINER ── */
+#login {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: 380px;
+	padding: var(--sp-5) var(--sp-5) var(--sp-4);
+	box-sizing: border-box;
+	margin: auto;
+	z-index: 10;
+}
+
+/* ── LOGO (HIDE DEFAULT WORDPRESS LOGO) ── */
+.login h1 a {
+	display: none;
+}
+
+#login h1 {
+	margin: 0;
+}
+
+/* ── CUSTOM INTRO BLOCK ── */
+.login-intro {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	margin-bottom: var(--sp-4);
+	width: 100%;
+}
+
+.user-icon-wrap {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+	background: linear-gradient(135deg, var(--accent-soft), var(--surface-2));
+	border: 1px solid var(--line);
+	margin-bottom: var(--sp-2);
+	box-shadow: var(--shadow-sm);
+}
+
+.user-icon {
+	width: 20px;
+	height: 20px;
+	display: block;
+}
+
+.login-intro h6 {
+	font-family: var(--font-base);
+	font-size: var(--t-h6);
+	font-weight: var(--font-semibold);
+	color: var(--ink);
+	margin: 0;
+	letter-spacing: -0.015em;
+}
+
+.login-intro p {
+	font-size: var(--t-sm);
+	color: var(--muted);
+	margin: var(--sp-1) 0 0 0;
+	line-height: var(--leading-normal);
+}
+
+/* ── FORM CONTAINER ── */
+#loginform,
+#lostpasswordform {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-areas:
+		"username username"
+		"password password"
+		"remember forgot"
+		"submit   submit";
+	background: transparent;
+	border: none;
+	padding: 0;
+	box-shadow: none;
+	width: 100%;
+	gap: var(--sp-3);
+}
+
+#lostpasswordform {
+	display: flex;
+	flex-direction: column;
+	gap: var(--sp-3);
+}
+
+#loginform p,
+#lostpasswordform p,
+.user-pass-wrap {
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	gap: var(--sp-1);
+}
+
+#loginform > p:first-child {
+	grid-area: username;
+}
+
+.user-pass-wrap {
+	grid-area: password;
+	position: relative;
+}
+
+.forgetmenot {
+	grid-area: remember;
+	display: flex !important;
+	flex-direction: row !important;
+	align-items: center !important;
+	margin: 0 !important;
+	float: none !important;
+}
+
+.wrapper-login__forgot {
+	grid-area: forgot;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	margin: 0;
+	padding: 0;
+}
+
+#loginform p.submit,
+#lostpasswordform p.submit {
+	grid-area: submit;
+	margin-top: var(--sp-1);
+}
+
+/* ── INPUT FIELDS & LABELS ── */
+.login form label {
+	font-family: var(--font-base);
+	font-size: var(--t-sm);
+	font-weight: var(--font-medium);
+	color: var(--ink-2);
+	letter-spacing: -0.01em;
+}
+
+.login form .input,
+.login input[type="text"],
+.login input[type="password"] {
+	width: 100%;
+	height: 36px;
+	padding: var(--sp-1) var(--sp-3);
+	border: 1px solid var(--line) !important;
+	background-color: var(--surface);
+	color: var(--ink);
+	font-family: var(--font-base);
+	font-size: var(--t-body);
+	outline: none;
+	border-radius: var(--radius-md) !important;
+	box-shadow: var(--shadow-sm) !important;
+	-webkit-appearance: none;
+	appearance: none;
+	box-sizing: border-box;
+	transition: all var(--dur) var(--ease);
+}
+
+.login form .input:focus,
+.login input[type="text"]:focus,
+.login input[type="password"]:focus {
+	border-color: var(--accent) !important;
+	background-color: var(--surface);
+	outline: none;
+	box-shadow: 0 0 0 3px var(--accent-glow) !important;
+}
+
+/* Icons inside inputs */
+#user_login,
+#user_pass {
+	background-repeat: no-repeat;
+	background-size: 15px;
+	background-position: 12px center;
+	padding-left: 36px;
+}
+
+#user_login {
+	background-image: url("../assets/images/mail-icon.svg");
+}
+
+#user_pass {
+	background-image: url("../assets/images/lock-icon.svg");
+}
+
+/* Password Toggle Eye Button */
+.login .button.wp-hide-pw {
+	position: absolute;
+	right: 0;
+	top: 38%;
+	transform: translateY(-50%);
+	background: none !important;
+	border: none !important;
+	box-shadow: none !important;
+	color: var(--muted);
+	cursor: pointer;
+	height: auto;
+	padding: 0 var(--sp-2);
+	margin: 0 !important;
+	display: flex;
+	align-items: center;
+	transition: color var(--dur) var(--ease);
+}
+
+.login .button.wp-hide-pw:hover {
+	color: var(--ink);
+}
+
+.wp-pwd {
+	position: relative;
+	width: 100%;
+}
+
+/* Remember label spacing */
+.login form .forgetmenot label {
+	text-transform: none !important;
+	letter-spacing: normal !important;
+	font-family: var(--font-base) !important;
+	color: var(--muted) !important;
+	font-size: var(--t-sm) !important;
+	cursor: pointer !important;
+	display: inline-flex !important;
+	align-items: center !important;
+	flex-direction: row !important;
+	margin: 0 !important;
+}
+
+#login input[type="checkbox"]#rememberme {
+	width: 14px !important;
+	height: 14px !important;
+	cursor: pointer !important;
+	border: 1px solid var(--line-2) !important;
+	border-radius: var(--radius-sm) !important;
+	accent-color: var(--accent) !important;
+	margin: 0 6px 0 0 !important;
+	float: none !important;
+	display: inline-block !important;
+	-webkit-appearance: checkbox !important;
+	appearance: checkbox !important;
+}
+
+.login-forgot {
+	font-family: var(--font-base);
+	font-size: var(--t-sm);
+	font-weight: var(--font-medium);
+	color: var(--accent-strong);
+	text-decoration: none;
+	transition: color var(--dur) var(--ease);
+}
+
+.login-forgot:hover {
+	color: var(--accent);
+	text-decoration: underline;
+}
+
+/* ── SUBMIT BUTTON ── */
+#wp-submit {
+	width: 100%;
+	height: 36px;
+	box-sizing: border-box;
+	border: none !important;
+	border-radius: var(--radius-md) !important;
+	background-color: var(--accent-strong) !important;
+	color: white !important;
+	font-family: var(--font-base) !important;
+	font-size: var(--t-sm) !important;
+	font-weight: var(--font-semibold) !important;
+	cursor: pointer;
+	text-shadow: none !important;
+	box-shadow: var(--shadow-sm) !important;
+	transition: all var(--dur) var(--ease) !important;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#wp-submit:hover {
+	background-color: var(--accent) !important;
+	box-shadow: 0 4px 10px rgba(16, 185, 129, 0.15) !important;
+	transform: translateY(-0.5px);
+}
+
+#wp-submit:active {
+	transform: translateY(0);
+}
+
+/* ── NOTIFICATIONS & ERRORS ── */
+#login_error,
+#login .message,
+#login .notice,
+.notice-info {
+	font-family: var(--font-base);
+	font-size: var(--t-sm);
+	line-height: var(--leading-normal);
+	border: 1px solid rgba(16, 185, 129, 0.15) !important;
+	border-radius: var(--radius-md) !important;
+	background-color: var(--accent-soft) !important;
+	color: var(--accent-strong) !important;
+	padding: var(--sp-2) var(--sp-3) !important;
+	margin: 0 0 var(--sp-3) !important;
+	box-shadow: var(--shadow-sm) !important;
+	box-sizing: border-box;
+}
+
+#login_error {
+	border-color: rgba(239, 68, 68, 0.15) !important;
+	border-left-color: #EF4444 !important;
+	background-color: #FEF2F2 !important;
+	color: #991B1B !important;
+}
+
+/* ── NAVIGATION BOTTOM LINKS ── */
+#login #nav,
+#login #backtoblog {
+	margin: var(--sp-3) 0 0 0 !important;
+	padding: 0 !important;
+	text-align: center;
+	font-family: var(--font-base);
+	font-size: var(--t-sm);
+	font-weight: var(--font-medium);
+}
+
+#login #nav a,
+#login #backtoblog a {
+	color: var(--muted) !important;
+	text-decoration: none;
+	transition: color var(--dur) var(--ease);
+}
+
+#login #nav a:hover,
+#login #backtoblog a:hover {
+	color: var(--accent-strong) !important;
+	text-decoration: underline;
+}
+
+#login #backtoblog {
+	margin-top: var(--sp-2) !important;
+	border-top: 1px solid var(--line);
+	padding-top: var(--sp-2) !important;
+}
+
+.wp-login-lost-password {
+	display: block !important;
+}
+
+/* ── RESPONSIVENESS ── */
+@media (max-width: 480px) {
+	#login {
+		border: none;
+		box-shadow: none;
+		padding: var(--sp-4) var(--sp-3);
+		background-color: transparent;
+	}
+
+	body.login {
+		background-color: var(--surface);
+		padding: 0;
+		align-items: flex-start;
+	}
+
+	body.login::before {
+		display: none;
+	}
+}

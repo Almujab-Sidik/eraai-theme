@@ -1,0 +1,150 @@
+/* ============================================
+   LEGAL PAGE — legal-*
+   ============================================ */
+
+.legal-hero,
+.legal-body {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-bottom: var(--bd-hair);
+    background-color: var(--paper);
+}
+
+.legal-hero__inner {
+    padding-block: var(--sp-7);
+    padding-inline: var(--gutter);
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-3);
+    width: 100%;
+}
+
+.legal-title {
+    font-size: var(--t-h1);
+    font-weight: var(--font-medium);
+    color: var(--ink);
+    line-height: var(--leading-tight);
+    letter-spacing: -0.04em;
+    margin: 0;
+}
+
+.legal-last-updated {
+    font-size: var(--t-sm);
+    font-family: var(--font-mono);
+    color: var(--muted);
+    margin: 0;
+}
+
+/* ── CONTENT AREA ── */
+.legal-body {
+    background-color: var(--surface);
+}
+
+.legal-body__inner {
+    padding-block: var(--sp-8);
+    padding-inline: var(--gutter);
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.legal-content {
+    max-width: 740px; /* Optimal reading width for documentation/prose */
+    width: 100%;
+}
+
+/* Typography styles inside content */
+.legal-content p {
+    font-size: var(--t-body);
+    line-height: var(--leading-loose);
+    color: var(--ink-2);
+    margin: 0 0 var(--sp-5);
+}
+
+.legal-content p:last-child {
+    margin-bottom: 0;
+}
+
+.legal-content h2 {
+    font-size: var(--t-h2);
+    font-weight: var(--font-medium);
+    letter-spacing: -0.03em;
+    margin: var(--sp-7) 0 var(--sp-3);
+    color: var(--ink);
+    border-bottom: var(--bd-hair);
+    padding-bottom: var(--sp-2);
+}
+
+.legal-content h3 {
+    font-size: var(--t-h3);
+    font-weight: var(--font-medium);
+    letter-spacing: -0.02em;
+    margin: var(--sp-6) 0 var(--sp-2);
+    color: var(--ink);
+}
+
+.legal-content ul, 
+.legal-content ol {
+    margin: 0 0 var(--sp-5);
+    padding-left: var(--sp-5);
+    color: var(--ink-2);
+    font-size: var(--t-body);
+    line-height: var(--leading-loose);
+}
+
+.legal-content li {
+    margin-bottom: var(--sp-2);
+}
+
+.legal-content li strong {
+    color: var(--ink);
+}
+
+.legal-content a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dashed var(--accent);
+    transition: all var(--dur) var(--ease);
+}
+
+.legal-content a:hover {
+    color: var(--accent-strong);
+    border-color: var(--accent-strong);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+    .legal-hero__inner {
+        padding-block: var(--sp-6);
+        padding-inline: var(--sp-4);
+    }
+
+    .legal-title {
+        font-size: var(--t-h2);
+    }
+
+    .legal-body__inner {
+        padding-block: var(--sp-6);
+        padding-inline: var(--sp-4);
+    }
+
+    .legal-content p, 
+    .legal-content ul, 
+    .legal-content ol {
+        font-size: var(--t-sm);
+    }
+
+    .legal-content h2 {
+        font-size: var(--t-h3);
+        margin: var(--sp-6) 0 var(--sp-3);
+    }
+
+    .legal-content h3 {
+        font-size: var(--t-body);
+        margin: var(--sp-5) 0 var(--sp-2);
+    }
+}

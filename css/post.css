@@ -1,0 +1,156 @@
+/* ============================================
+   POSTS SECTION — layout sejajar dengan .hero
+   ============================================ */
+
+.posts-section {
+    background-color: var(--paper);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: var(--bd-hair);
+}
+
+.posts-section .wrapper__border {
+    width: 100%;
+    height: auto;
+    align-items: flex-start;
+    border-left: none;
+    border-right: none;
+}
+
+.posts-section__inner {
+    width: 100%;
+    padding-block: var(--sp-7);
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-6);
+}
+
+/* ── Section Header ── */
+.posts-section__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: var(--sp-4);
+    border-bottom: var(--bd-hair);
+}
+
+.posts-section__label {
+    font-size: var(--t-cap);
+    font-weight: var(--font-medium);
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.posts-section .card {
+    min-width: 0;
+    overflow: hidden;
+}
+
+.posts-section .card .ttl {
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+.posts-section .card .cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.posts-section .card .byl {
+    flex-wrap: wrap;
+    gap: var(--sp-2);
+    word-break: break-word;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 860px) {
+    .posts-section__inner {
+        padding-block: var(--sp-6);
+        gap: var(--sp-5);
+    }
+}
+
+@media (max-width: 600px) {
+    .posts-section__inner {
+        padding-block: var(--sp-5);
+        padding-inline: var(--sp-4);
+        gap: var(--sp-4);
+    }
+
+    .posts-section .card .body {
+        padding: var(--sp-4);
+    }
+
+    .posts-section .card .byl {
+        font-size: 10px;
+    }
+}
+
+/* ============================================
+   FILTER SECTION
+   ============================================ */
+
+.filter-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-2);
+    margin-bottom: var(--sp-1);
+}
+
+.filter-tab {
+    font-family: var(--font-base);
+    font-size: 13px;
+    font-weight: var(--font-medium);
+    text-transform: none;
+    letter-spacing: normal;
+    padding: 6px 12px;
+    background-color: var(--surface);
+    color: var(--muted);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm); /* 8px */
+    cursor: pointer;
+    transition: all var(--dur) var(--ease);
+}
+
+.filter-tab:hover {
+    color: var(--ink);
+    border-color: var(--line-2);
+    background-color: var(--surface-2);
+}
+
+.filter-tab.active {
+    color: var(--paper);
+    background-color: var(--ink);
+    border-color: var(--ink);
+}
+
+/* Animasi transisi filter */
+@keyframes cardFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.filter-card.is-filtered {
+    animation: cardFadeIn 0.35s var(--ease) forwards;
+}
+
+.posts-section__footer {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--sp-6);
+    width: 100%;
+}

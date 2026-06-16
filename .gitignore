@@ -1,0 +1,15 @@
+# OS junk files
+.DS_Store
+Thumbs.db
+
+# Node dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# SASS cache
+.sass-cache/
+
+# Theme build/distribution files
+/*.zip
+/dist/
