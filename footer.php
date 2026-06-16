@@ -117,9 +117,9 @@
 				<div class="footer-bottom">
 					<p class="copyright">© <?php echo date('Y'); ?> ERA AI. Hak Cipta Dilindungi.</p>
 					<div class="footer-bottom-links">
-						<a href="<?php echo esc_url(home_url('/kebijakan-privasi')); ?>">Kebijakan Privasi</a>
+						<a href="<?php echo esc_url(home_url('/privacy-policy')); ?>">Privacy Policy</a>
 						<span class="sep">·</span>
-						<a href="<?php echo esc_url(home_url('/syarat-ketentuan')); ?>">Syarat & Ketentuan</a>
+						<a href="<?php echo esc_url(home_url('/terms-and-conditions')); ?>">Terms & Conditions</a>
 					</div>
 				</div>
 
