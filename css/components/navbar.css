@@ -6,9 +6,9 @@
     position: sticky;
     top: 0;
     z-index: 50;
-    background: var(--navbar-bg);
-    backdrop-filter: saturate(180%) blur(12px);
-    -webkit-backdrop-filter: saturate(180%) blur(12px);
+    background: rgba(255, 255, 255, 0.7) !important;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
     border-bottom: 1px solid var(--line);
     transition: background-color var(--dur) var(--ease), border-color var(--dur) var(--ease);
 }

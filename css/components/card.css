@@ -70,7 +70,7 @@
     left: 10px;
     bottom: 10px;
     font-family: var(--font-mono);
-    font-size: 10px;
+    font-size: var(--t-cap);
     letter-spacing: .02em;
     text-transform: uppercase;
     color: var(--ink-2);
@@ -92,7 +92,7 @@
     right: 10px;
     top: 10px;
     font-family: var(--font-mono);
-    font-size: 10px;
+    font-size: var(--t-cap);
     color: var(--muted);
     background: var(--badge-bg);
     backdrop-filter: blur(4px);
@@ -139,7 +139,7 @@
 }
 
 .card .dek {
-    font-size: 13px;
+    font-size: 14px;
     color: var(--muted);
     line-height: 1.5;
     flex: 1;
@@ -161,7 +161,7 @@
     margin-top: 8px;
     border-top: 1px solid var(--line);
     font-family: var(--font-mono);
-    font-size: 11px;
+    font-size: var(--t-cap);
     letter-spacing: .05em;
     color: var(--muted-2);
     text-transform: uppercase;
@@ -235,7 +235,7 @@
     }
 
     .card-feature .dek {
-        font-size: 13px;
+        font-size: 14px;
         -webkit-line-clamp: 3;
         line-clamp: 3;
     }
