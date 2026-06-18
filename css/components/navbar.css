@@ -163,3 +163,14 @@
         border-radius: 6px;
     }
 }
+
+/* ── WordPress Admin Bar Spacing ── */
+.admin-bar .navbar {
+    top: 32px;
+}
+
+@media screen and (max-width: 782px) {
+    .admin-bar .navbar {
+        top: 46px;
+    }
+}
