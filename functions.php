@@ -9,7 +9,7 @@
  */
 if (!defined('_S_VERSION')) {
 	// Replace the version number of the theme on each release.
-	define('_S_VERSION', '1.0.5');
+	define('_S_VERSION', '1.0.6');
 }
 
 /**
@@ -165,43 +165,11 @@ function era_ai_scripts()
 		null
 	);
 
-	// global css
+	// core css (global + tokens + typography + button + navbar bundled into one request)
 	wp_enqueue_style(
-		'eraai-global',
-		get_template_directory_uri() . '/css/global.css',
-		array(),
-		_S_VERSION
-	);
-
-	// token css
-	wp_enqueue_style(
-		'eraai-tokens',
-		get_template_directory_uri() . '/css/tokens.css',
+		'eraai-core',
+		get_template_directory_uri() . '/css/core.css',
 		array('eraai-google-fonts'),
-		_S_VERSION
-	);
-
-	// typography css
-	wp_enqueue_style(
-		'eraai-typography',
-		get_template_directory_uri() . '/css/typography.css',
-		array('eraai-tokens'),
-		_S_VERSION
-	);
-
-	// button css
-	wp_enqueue_style(
-		'eraai-button',
-		get_template_directory_uri() . '/css/components/button.css',
-		array('eraai-tokens'),
-		_S_VERSION
-	);
-
-	// navbar css
-	wp_enqueue_style(
-		'eraai-navbar',
-		get_template_directory_uri() . '/css/components/navbar.css',
-		array('eraai-tokens'),
 		_S_VERSION
 	);
 
@@ -234,7 +202,7 @@ function era_ai_scripts()
 		wp_enqueue_style(
 			'eraai-card',
 			get_template_directory_uri() . '/css/components/card.css',
-			array('eraai-tokens'),
+			array('eraai-core'),
 			_S_VERSION
 		);
 	}
@@ -244,7 +212,7 @@ function era_ai_scripts()
 		wp_enqueue_style(
 			'eraai-single',
 			get_template_directory_uri() . '/css/single.css',
-			array('eraai-tokens'),
+			array('eraai-core'),
 			_S_VERSION
 		);
 	}
@@ -254,7 +222,7 @@ function era_ai_scripts()
 		wp_enqueue_style(
 			'eraai-about',
 			get_template_directory_uri() . '/css/about.css',
-			array('eraai-tokens'),
+			array('eraai-core'),
 			_S_VERSION
 		);
 	}
@@ -264,13 +232,13 @@ function era_ai_scripts()
 		wp_enqueue_style(
 			'eraai-blog',
 			get_template_directory_uri() . '/css/blog.css',
-			array('eraai-tokens'),
+			array('eraai-core'),
 			_S_VERSION
 		);
 		wp_enqueue_style(
 			'eraai-card',
 			get_template_directory_uri() . '/css/components/card.css',
-			array('eraai-tokens'),
+			array('eraai-core'),
 			_S_VERSION
 		);
 	}
@@ -298,7 +266,7 @@ function era_ai_scripts()
 		wp_enqueue_style(
 			'eraai-contact',
 			get_template_directory_uri() . '/css/contact.css',
-			array('eraai-tokens'),
+			array('eraai-core'),
 			_S_VERSION
 		);
 		wp_enqueue_script(
@@ -323,7 +291,7 @@ function era_ai_scripts()
 		wp_enqueue_style(
 			'eraai-services',
 			get_template_directory_uri() . '/css/services.css',
-			array('eraai-tokens'),
+			array('eraai-core'),
 			_S_VERSION
 		);
 	}
@@ -333,7 +301,7 @@ function era_ai_scripts()
 		wp_enqueue_style(
 			'eraai-automation',
 			get_template_directory_uri() . '/css/automation.css',
-			array('eraai-tokens'),
+			array('eraai-core'),
 			_S_VERSION
 		);
 	}
@@ -343,7 +311,7 @@ function era_ai_scripts()
 		wp_enqueue_style(
 			'eraai-legal',
 			get_template_directory_uri() . '/css/legal.css',
-			array('eraai-tokens'),
+			array('eraai-core'),
 			_S_VERSION
 		);
 	}
