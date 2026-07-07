@@ -17,6 +17,30 @@
 	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<?php
+	if ( is_front_page() ) {
+		$hero_banner = get_field('banner_hero');
+		if ( $hero_banner ) {
+			$hero_banner_id = attachment_url_to_postid( $hero_banner );
+			if ( $hero_banner_id ) {
+				$img_src = wp_get_attachment_image_url( $hero_banner_id, 'large' );
+				$img_srcset = wp_get_attachment_image_srcset( $hero_banner_id, 'large' );
+				// Let's match the standard sizes attribute or use large
+				$img_sizes = wp_get_attachment_image_sizes( $hero_banner_id, 'large' );
+				
+				if ( $img_srcset && $img_sizes ) {
+					echo '	<link rel="preload" fetchpriority="high" as="image" href="' . esc_url( $img_src ) . '" imagesrcset="' . esc_attr( $img_srcset ) . '" imagesizes="' . esc_attr( $img_sizes ) . '">' . "\n";
+				} else {
+					echo '	<link rel="preload" fetchpriority="high" as="image" href="' . esc_url( $img_src ) . '">' . "\n";
+				}
+			} else {
+				echo '	<link rel="preload" fetchpriority="high" as="image" href="' . esc_url( $hero_banner ) . '">' . "\n";
+			}
+		}
+	}
+	?>
 
 	<?php wp_head(); ?>
 </head>

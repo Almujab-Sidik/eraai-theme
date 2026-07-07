@@ -22,9 +22,7 @@ Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
 
-/* Google Fonts: JetBrains Mono
---------------------------------------------- */
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+/* Google Fonts: JetBrains Mono (Loaded via functions.php to avoid render-blocking CSS chain) */
 
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:

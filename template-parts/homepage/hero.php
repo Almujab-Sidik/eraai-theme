@@ -37,8 +37,25 @@ $hero_date        = get_field('publish_date') ?: '';
 
             <?php if ( $hero_banner ) : ?>
             <div class="hero__content-right">
-                <img src="<?php echo esc_url( $hero_banner ); ?>"
-                     alt="<?php echo esc_attr( $hero_headline ); ?>">
+                <?php
+                $hero_banner_id = attachment_url_to_postid( $hero_banner );
+                if ( $hero_banner_id ) {
+                    echo wp_get_attachment_image( $hero_banner_id, 'large', false, array(
+                        'fetchpriority' => 'high',
+                        'loading'       => 'eager',
+                        'decoding'      => 'async',
+                        'alt'           => esc_attr( $hero_headline ),
+                    ) );
+                } else {
+                    ?>
+                    <img src="<?php echo esc_url( $hero_banner ); ?>"
+                         alt="<?php echo esc_attr( $hero_headline ); ?>"
+                         fetchpriority="high"
+                         loading="eager"
+                         decoding="async">
+                    <?php
+                }
+                ?>
             </div>
             <?php endif; ?>
 
